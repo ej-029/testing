@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .brand-gradient {
+        background: #00ff00;
+        background: linear-gradient(to left, #00ff00 0%, #160092 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .vr {
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!--nav-->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow small mb-3">
+      <div class="container-fluid">
+        <!--brand logo-->
+        <a href="./dashboard.html" class="navbar-brand">
+          <span class="brand-gradient">EMS2.0</span>
+        </a>
+        <!--navbar toggler button-->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar-supported-content"
+          aria-controls="navbar-supported-content"
+          aria-expanded="false"
+          aria-label="toggle Navigation"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+        <!--adding navbar items-->
+        <div class="collapse navbar-collapse" id="navbar-supported-content">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                href="./dashboard.html"
+                class="nav-link active"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="./employee.html" class="nav-link">Employees</a>
+            </li>
+            <li class="nav-item">
+              <a href="./jobs.html" class="nav-link">Jobs</a>
+            </li>
+          </ul>
+          <!--creating search input field-->
+          <form class="d-flex" role="search">
+            <div class="hstack gap-3 me-3">
+              <input
+                type="search"
+                class="from-control form-control-sm me-auto"
+                placeholder="search for..."
+                aria-label="search for..."
+              />
+              <button type="submit" class="btn btn-sm btn-success">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!--vertical line between search field and button-->
+            <div class="vr"></div>
+            <!--logout button-->
+            <a href="./index.html" class="btn btn-sm btn-warning ms-3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-power"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.5 1v7h1V1h-1z" />
+                <path
+                  d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
+                />
+              </svg>
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--navbar over -->
+
+    <!--jobs data-->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-2">
+          <div class="list-group shadow-sm small mb-3">
+            <div class="list-group-item active">Jobs Data</div>
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              data-bs-toggle="modal"
+              data-bs-target="#add_job"
+              >Add Job</a
+            >
+            <a href="./jobs.html" class="list-group-item list-group-item-action"
+              >View Jobs</a
+            >
+          </div>
+
+          <div class="list-group shadow-sm small mb-3">
+            <div class="list-group-item active">Related Link</div>
+            <a
+              href="./employee.html"
+              class="list-group-item list-group-item-action"
+              >Employees List</a
+            >
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="card shadow-sm border-0 mb-3">
+            <div class="card-header text-bg-dark text-center">Jobs List</div>
+            <table
+              class="table table-sm small table-bordered align-middle mb-0"
+            >
+              <tr class="table-secondary">
+                <th>ID</th>
+                <th>Job Name</th>
+                <th>Details</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+
+              <tr>
+                <td>1</td>
+                <td>Graphic Designer</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_detail_1"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_edit_1"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_delete_1"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Web Designer</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_detail_2"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_edit_2"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_delete_2"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>Web Developer</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_detail_3"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_edit_3"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_delete_3"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>Digital Marketer</td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_detail_4"
+                      >Details</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_edit_4"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="d-grid">
+                    <a
+                      href="#"
+                      class="btn btn-sm btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Job_delete_4"
+                      >Delete</a
+                    >
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--jobs data over-->
+
+    <!--add Jobs modal-->
+    <div
+      class="modal fade"
+      id="add_job"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Add Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for Job editing-->
+          <div class="modal-body">
+            <form>
+              <div class="container">
+                <div class="row gx-3">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="date"
+                        class="form-control form-control-sm"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        placeholder="Job name"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--submit button-->
+                  <div class="col-md-10">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-sm btn-success">
+                        Add Job
+                      </button>
+                    </div>
+                  </div>
+                  <!--close button-->
+                  <div class="col-md-2">
+                    <div class="d-grid">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-warning"
+                        data-bs-dismiss="modal"
+                        aria-label="close"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--add Jobs section over-->
+
+    <!--job detaile modal-->
+    <div
+      class="modal fade"
+      id="Job_detail_1"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for employee editing-->
+          <div class="modal-body p-0">
+            <table class="table table-bordered small mb-0">
+              <tr>
+                <th class="w-50">ID</th>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>25th july 2022</td>
+              </tr>
+              <tr>
+                <th>Job Name</th>
+                <td>Graphic Designer</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="#"
+              class="btn btn-sm btn-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#Job_edit_3"
+              >Edit Details</a
+            >
+            <a
+              href="#"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+              >Close</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_detail_2"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for employee editing-->
+          <div class="modal-body p-0">
+            <table class="table table-bordered small mb-0">
+              <tr>
+                <th class="w-50">ID</th>
+                <td>2</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>27th july 2022</td>
+              </tr>
+              <tr>
+                <th>Job Name</th>
+                <td>Web Designer</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="#"
+              class="btn btn-sm btn-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#Job_edit_1"
+              >Edit Details</a
+            >
+            <a
+              href="#"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+              >Close</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_detail_3"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for employee editing-->
+          <div class="modal-body p-0">
+            <table class="table table-bordered small mb-0">
+              <tr>
+                <th class="w-50">ID</th>
+                <td>3</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>10th june 2022</td>
+              </tr>
+              <tr>
+                <th>Job Name</th>
+                <td>Web Developer</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="#"
+              class="btn btn-sm btn-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#Job_edit_3"
+              >Edit Details</a
+            >
+            <a
+              href="#"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+              >Close</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_detail_4"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for employee editing-->
+          <div class="modal-body p-0">
+            <table class="table table-bordered small mb-0">
+              <tr>
+                <th class="w-50">ID</th>
+                <td>4</td>
+              </tr>
+              <tr>
+                <th>Date</th>
+                <td>25th june 2022</td>
+              </tr>
+              <tr>
+                <th>Job Name</th>
+                <td>Digital Marketer</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a
+              href="#"
+              class="btn btn-sm btn-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#Job_edit_4"
+              >Edit Details</a
+            >
+            <a
+              href="#"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+              >Close</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--job detaile modal over-->
+
+    <!--Edit jobs modal-->
+    <div
+      class="modal fade"
+      id="Job_edit_1"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Edit Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for job editing-->
+          <div class="modal-body">
+            <form>
+              <div class="container">
+                <div class="row gx-3">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="date"
+                        class="form-control form-control-sm"
+                        value="2022-07-25"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        placeholder="Job name"
+                        value="Graphic Designer"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--submit button-->
+                  <div class="col-md-10">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-sm btn-success">
+                        Update Job
+                      </button>
+                    </div>
+                  </div>
+                  <!--close button-->
+                  <div class="col-md-2">
+                    <div class="d-grid">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-warning"
+                        data-bs-dismiss="modal"
+                        aria-label="close"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_edit_2"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Edit Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for job editing-->
+          <div class="modal-body">
+            <form>
+              <div class="container">
+                <div class="row gx-3">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="date"
+                        class="form-control form-control-sm"
+                        value="2022-06-27"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        placeholder="Job name"
+                        value="Web Designer"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--submit button-->
+                  <div class="col-md-10">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-sm btn-success">
+                        Update Job
+                      </button>
+                    </div>
+                  </div>
+                  <!--close button-->
+                  <div class="col-md-2">
+                    <div class="d-grid">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-warning"
+                        data-bs-dismiss="modal"
+                        aria-label="close"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_edit_3"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Edit Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for job editing-->
+          <div class="modal-body">
+            <form>
+              <div class="container">
+                <div class="row gx-3">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="date"
+                        class="form-control form-control-sm"
+                        value="2022-07-10"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        placeholder="Job name"
+                        value="Web Developer"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--submit button-->
+                  <div class="col-md-10">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-sm btn-success">
+                        Update Job
+                      </button>
+                    </div>
+                  </div>
+                  <!--close button-->
+                  <div class="col-md-2">
+                    <div class="d-grid">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-warning"
+                        data-bs-dismiss="modal"
+                        aria-label="close"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_edit_4"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-bg-dark">
+            <h5 class="modal-title">Edit Job Details</h5>
+            <button
+              type="button"
+              class="btn-class btn-class-white"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <!--modal body for job editing-->
+          <div class="modal-body">
+            <form>
+              <div class="container">
+                <div class="row gx-3">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="date"
+                        class="form-control form-control-sm"
+                        value="2022-06-25"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        placeholder="Job name"
+                        value="Digital Marketer"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <!--submit button-->
+                  <div class="col-md-10">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-sm btn-success">
+                        Update Job
+                      </button>
+                    </div>
+                  </div>
+                  <!--close button-->
+                  <div class="col-md-2">
+                    <div class="d-grid">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-warning"
+                        data-bs-dismiss="modal"
+                        aria-label="close"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Edit jobs section over-->
+
+    <!--job delete modal-->
+    <div
+      class="modal fade"
+      id="Job_delete_1"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!--modal body for job editing-->
+          <div
+            class="modal-body text-center d-flex justify-content-between align-items-center"
+          >
+            <h4 class="fw-light m-0">
+              Do you really want to delete a Job<strong
+                ><q> Graphic Designer </q></strong
+              >
+              ?
+            </h4>
+            <button
+              type="button"
+              class="btn-class ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm btn-danger">Yes</button>
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            >
+              Nope, Go back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_delete_2"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!--modal body for job editing-->
+          <div
+            class="modal-body text-center d-flex justify-content-between align-items-center"
+          >
+            <h4 class="fw-light m-0">
+              Do you really want to delete a Job<strong
+                ><q> Web Designer </q></strong
+              >
+              ?
+            </h4>
+            <button
+              type="button"
+              class="btn-class ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm btn-danger">Yes</button>
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            >
+              Nope, Go back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_delete_3"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!--modal body for job editing-->
+          <div
+            class="modal-body text-center d-flex justify-content-between align-items-center"
+          >
+            <h4 class="fw-light m-0">
+              Do you really want to delete a Job<strong
+                ><q> Web Developer </q></strong
+              >
+              ?
+            </h4>
+            <button
+              type="button"
+              class="btn-class ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm btn-danger">Yes</button>
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            >
+              Nope, Go back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Job_delete_4"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      style="backdrop-filter: blur(5px)"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!--modal body for job editing-->
+          <div
+            class="modal-body text-center d-flex justify-content-between align-items-center"
+          >
+            <h4 class="fw-light m-0">
+              Do you really want to delete a Job<strong
+                ><q> Digital Marketer </q></strong
+              >
+              ?
+            </h4>
+            <button
+              type="button"
+              class="btn-class ms-auto"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            ></button>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-sm btn-danger">Yes</button>
+            <button
+              type="button"
+              class="btn btn-sm btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="close"
+            >
+              Nope, Go back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--job delete modal over-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

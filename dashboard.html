@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .brand-gradient {
+        background: #00ff00;
+        background: linear-gradient(to left, #00ff00 0%, #00ffff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .vr {
+        color: rgb(172, 7, 15);
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!--nav-->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow small mb-3">
+      <div class="container-fluid">
+        <!--brand logo-->
+        <a href="./dashboard.html" class="navbar-brand">
+          <span class="brand-gradient">EMS2.0</span>
+        </a>
+        <!--navbar toggler button-->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar-supported-content"
+          aria-controls="navbar-supported-content"
+          aria-expanded="false"
+          aria-label="toggle Navigation"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </button>
+        <!--adding navbar items-->
+        <div class="collapse navbar-collapse" id="navbar-supported-content">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="./dashboard.html" class="nav-link" aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="./employee.html" class="nav-link">Employees</a>
+            </li>
+            <li class="nav-item">
+              <a href="./jobs.html" class="nav-link">Jobs</a>
+            </li>
+          </ul>
+          <!--creating search input field-->
+          <form class="d-flex" role="search">
+            <div class="hstack gap-3 me-3">
+              <input
+                type="search"
+                class="from-control form-control-sm me-auto"
+                placeholder="search for..."
+                aria-label="search for..."
+              />
+              <button type="submit" class="btn btn-sm btn-success">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!--vertical line between search field and button-->
+            <div class="vr"></div>
+            <!--logout button-->
+            <a href="./index.html" class="btn btn-sm btn-warning ms-3"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-power"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.5 1v7h1V1h-1z" />
+                <path
+                  d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"
+                />
+              </svg>
+            </a>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--navbar over -->
+
+    <!--cards-->
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <!--card to display employees number-->
+          <div class="card text-bg-primary shadow text-center">
+            <div class="card-header">Employees List</div>
+            <div class="card-body">
+              <span class="fs-1">254+</span>
+            </div>
+            <a
+              href="./employee.html"
+              class="card-footer small text-decoration-none text-white"
+              >View Employees</a
+            >
+          </div>
+        </div>
+
+        <!--card to display available jobs number-->
+        <div class="col-md-3">
+          <div class="card text-bg-primary shadow text-center">
+            <div class="card-header">Jobs List</div>
+            <div class="card-body">
+              <span class="fs-1">25+</span>
+            </div>
+            <a
+              href="./jobs.html"
+              class="card-footer small text-decoration-none text-white"
+              >View All Jobs</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
